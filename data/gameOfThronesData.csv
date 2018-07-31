@@ -1,0 +1,43 @@
+"","kingdom","land","population","soldier","quantity","views","ep","season"
+"1","The North",30,4,"Infantry",25000,300,1,1,
+"2","The Vale",7,4,"Infantry",20000,456,2,2,
+"3","Riverlands",8,4,"Infantry",45000,542,3,3,
+"4","Iron Islands",3,1,"Infantry",20000,132,4,1,
+"5","Westerlands",5,5,"Infantry",7940,290,5,2,
+"6","Crownlands",4,1,"Unsullied",8000,708,6,3,
+"7","The Reach",17,12,"Infantry",38000
+"8","Stormlands",4,2,"Infantry",12500
+"9","Dorne",15,3,"Infantry",27000
+"10","The North",30,4,"Calvalry",10000
+"11","The Vale",7,4,"Calvalry",10000
+"12","Riverlands",8,4,"Calvalry",5000
+"13","Iron Islands",3,1,"Archers",5000
+"14","Westerlands",5,5,"Calvalry",16000
+"15","Crownlands",4,1,"Dothraki",58000
+"16","The Reach",17,12,"Calvalry",28000
+"17","Stormlands",4,2,"Calvalry",10000
+"18","Dorne",15,3,"Calvalry",22000
+"19","The North",30,4,"Archers",10000
+"20","The Vale",7,4,"Archers",10000
+"21","Riverlands",8,4,"Archers",15000
+"22","Westerlands",5,5,"Archers",16000
+"23","Westerlands",5,5,"Knights",3000
+"24","Crownlands",4,1,"Second Sons",2000
+"25","The Reach",17,12,"Archers",20000
+"26","Stormlands",4,2,"Archers",3270
+"27","Dorne",15,3,"Archers",4000
+"28","The North",30,4,"Ships",50
+"29","The Vale",7,4,"Ships",300
+"30","Riverlands",8,4,"Spearmen",10000
+"31","Iron Islands",3,1,"Ships",2000
+"32","Westerlands",5,5,"Pikemen",5000
+"33","Crownlands",4,1,"Ships",40
+"34","The Reach",17,12,"Pikemen",4000
+"35","Stormlands",4,2,"Ships",230
+"36","The North",30,4,"Dire Wolf",1
+"37","The Vale",7,4,"Knights",4000
+"38","Iron Islands",3,1,"Axe Men",8000
+"39","Crownlands",4,1,"Dragons",3
+"40","The Reach",17,12,"Knights",4000
+"41","Stormlands",4,2,"Men at Arms",4000
+"42","The Reach",17,12,"Men at Arms",6000
