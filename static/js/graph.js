@@ -224,12 +224,6 @@ function show_army_size(ndx) {
 }
     
     
-    
-    //It seems to be this section here, the data just won't laod in the graph.
-    //It's almost exactly the same as the video tutorial on the course subject for 
-    //composite charts under DC.jc and Crossfilter.js
-    
-    
 function views_in_millions(ndx) {
     var episode_dim = ndx.dimension(dc.pluck('ep'));
     
@@ -260,9 +254,7 @@ function views_in_millions(ndx) {
         }
     });
     
-    
-    //The graph will render fine:
-    
+  
     var compositeChart = dc.compositeChart("#views-per-episode-per-season");
     compositeChart
         .width(900)
@@ -281,39 +273,22 @@ function views_in_millions(ndx) {
                 .group(seTwoViewsPerEpisode, 'Se2'),
             dc.lineChart(compositeChart)
                 .colors('blue')
-                .group(seThreeViewsPerEpisode, 'Se3'),    
+                .group(seThreeViewsPerEpisode, 'Se3'), 
+            dc.lineChart(compositeChart)
+                .colors('yellow')
+                .group(seThreeViewsPerEpisode, 'Se4'),
+            dc.lineChart(compositeChart)
+                .colors('purple')
+                .group(seThreeViewsPerEpisode, 'Se5'),
+            dc.lineChart(compositeChart)
+                .colors('orange')
+                .group(seThreeViewsPerEpisode, 'Se6'),
+            dc.lineChart(compositeChart)
+                .colors('black')
+                .group(seThreeViewsPerEpisode, 'Se7'),  
         ])
         .brushOn(false);
-        
-    dc.renderAll();
-}
-    
-    
-    //Attempted a line graph below, no results
-    
-    
-    
-// function views_in_millions(ndx) {
-
-//     var episode_dim = ndx.dimension(dc.pluck('ep'));
-//     var views_per_epsiode = episode_dim.group().reduceSum(dc.pluck('views'));
-    
-//     var minEp = episode_dim.bottom(1)[0].ep;
-//     var maxEp = episode_dim.top(1)[0].ep;
-   
-//   dc.lineChart("#views-per-episode-per-season")
-//     .width(800)
-//     .height(200)
-//     .dimension(episode_dim)
-//     .group(views_per_epsiode)
-//     .transitionDuration(500)
-//     .x(d3.time.scale().domain([minEp, maxEp]))
-//     .xAxisLabel("Episode")
-//     .yAxis().ticks(5);
-    
-//     dc.renderAll();
-   
-// }
+}    
     
     
 
