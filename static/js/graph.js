@@ -7,15 +7,15 @@ function makeGraphs(error, kingdomData){
         
         
     kingdomData.forEach(function(d){
-        d.ep = parseInt(d.ep);
-    })
-        
-    kingdomData.forEach(function(d){
         d.land = parseInt(d.land);
     })
     
     kingdomData.forEach(function(d){
         d.population = parseInt(d.population);
+    })
+    
+    kingdomData.forEach(function(d){
+        d.ep = parseInt(d.ep);
     })
 
     
@@ -80,7 +80,7 @@ function show_land_data(ndx) {
         .valueAccessor(function(d){
             return d.value.average.toFixed(0);
         })
-        .transitionDuration(2000);
+        .transitionDuration(1000);
 }
 
 function show_population_data(ndx) {
@@ -117,7 +117,7 @@ function show_population_data(ndx) {
     dc.barChart("#population-of-each-kingdom")
         .width(600)
         .height(400)
-        .margins({top: 20, right: 10, bottom: 20, left: 90})
+        .margins({top: 20, right: 10, bottom: 50, left: 40})
         .dimension(kingDim)
         .group(populationInMillions)
         .valueAccessor(function(d) {
@@ -125,6 +125,8 @@ function show_population_data(ndx) {
         })
         .transitionDuration(2000)
         .x(d3.scale.ordinal())
+        .yAxisLabel("Population in Millions")
+        .xAxisLabel("Kingdom")
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .yAxis().ticks(12);
@@ -218,9 +220,12 @@ function show_army_size(ndx) {
             .stack(quantityByNameAxeMen, "Axe Men")
             .stack(quantityByNameMenAtArms, "Men at Arms")
             .x(d3.scale.ordinal())
+            .yAxisLabel("Soldier Quantity and Type in Thousands")
             .xUnits(dc.units.ordinal)
-            .legend(dc.legend().x(520).y(0).itemHeight(15).gap(5));
-        stackedChart.margins({top: 20, right: 10, bottom: 20, left: 70});
+            .xAxisLabel("Kingdom")
+            .legend(dc.legend().x(520).y(0).itemHeight(15).gap(3));
+        stackedChart.margins({top: 20, right: 10, bottom: 50, left: 80});
+        
 }
     
     
@@ -254,38 +259,72 @@ function views_in_millions(ndx) {
         }
     });
     
+    var seFourViewsPerEpisode = episode_dim.group().reduceSum(function (d){
+        if (d.season === "4") {
+            return d.views;
+        } else {
+            return 0;
+        }
+    });
+    
+    var seFiveViewsPerEpisode = episode_dim.group().reduceSum(function (d){
+        if (d.season === "5") {
+            return d.views;
+        } else {
+            return 0;
+        }
+    });
+    
+    var seSixViewsPerEpisode = episode_dim.group().reduceSum(function (d){
+        if (d.season === "6") {
+            return d.views;
+        } else {
+            return 0;
+        }
+    });
+    
+    var seSevenViewsPerEpisode = episode_dim.group().reduceSum(function (d){
+        if (d.season === "7") {
+            return d.views;
+        } else {
+            return 0;
+        }
+    });
+    
+    
   
     var compositeChart = dc.compositeChart("#views-per-episode-per-season");
     compositeChart
-        .width(900)
+        .width(1000)
         .height(200)
         .dimension(episode_dim)
         .x(d3.time.scale().domain([firstEpisode, lastEpisode]))
         .yAxisLabel("Views in Millions")
-        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+        .xAxisLabel("Episode")
+        .legend(dc.legend().x(960).y(20).itemHeight(13).gap(5))
         .renderHorizontalGridLines(true)
         .compose([
             dc.lineChart(compositeChart)
                 .colors('green')
-                .group(seOneViewsPerEpisode, 'Se1'),
+                .group(seSevenViewsPerEpisode, 'Se7'),
             dc.lineChart(compositeChart)
                 .colors('red')
-                .group(seTwoViewsPerEpisode, 'Se2'),
+                .group(seSixViewsPerEpisode, 'Se6'),
             dc.lineChart(compositeChart)
                 .colors('blue')
-                .group(seThreeViewsPerEpisode, 'Se3'), 
+                .group(seFiveViewsPerEpisode, 'Se5'), 
             dc.lineChart(compositeChart)
-                .colors('yellow')
-                .group(seThreeViewsPerEpisode, 'Se4'),
+                .colors('brown')
+                .group(seFourViewsPerEpisode, 'Se4'),
             dc.lineChart(compositeChart)
                 .colors('purple')
-                .group(seThreeViewsPerEpisode, 'Se5'),
+                .group(seThreeViewsPerEpisode, 'Se3'),
             dc.lineChart(compositeChart)
                 .colors('orange')
-                .group(seThreeViewsPerEpisode, 'Se6'),
+                .group(seTwoViewsPerEpisode, 'Se2'),
             dc.lineChart(compositeChart)
                 .colors('black')
-                .group(seThreeViewsPerEpisode, 'Se7'),  
+                .group(seOneViewsPerEpisode, 'Se1'),  
         ])
         .brushOn(false);
 }    
