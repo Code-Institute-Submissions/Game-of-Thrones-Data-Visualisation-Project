@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Old+Standard+TT|Old+Standard+TT|Lora|Poiret+One|Markazi+Text:100,200,300,400,500,600,700');
+
+
+/*-------------------BACKGROUND IMAGE (START)---------------------*/
+
+body {
+    background: url('images/imagesForGOTinteractiveProject/westeros.jpg') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*-------------------BACKGROUND IMAGE (END)---------------------*/
+
+
+
+
+
+
+
+/*-------------------NAVBAR (START)---------------------*/
+
+.navbar{
+    margin-bottom: 50px;
+}
+
+/*-------------------NAVBAR (END)---------------------*/
+
+
+
+
+
+
+/*-------------------KINGDOM SELECTOR (START)---------------------*/
+
+#kingdom-selector {
+    margin-bottom: 100px;
+}    
+    
+.selectKingdomSubtitle {
+    font-family: 'Old Standard TT',sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/*-------------------KINGDOM SELECTOR (END)---------------------*/
+
+
+
+
+
+
+
+/*---------------------BRIEF CHART DESCRIPTIONS (START)-------------------*/
+
+.text1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Cinzel', sans-serif;
+}
+
+
+.text2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Cinzel', sans-serif;
+}
+
+.text3 {
+    padding-left: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Cinzel', sans-serif;
+}
+
+.text4 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Cinzel', sans-serif;
+}
+
+/*---------------------BRIEF CHART DESCRIPTIONS (END)----------------------*/
+
+
+
+
+
+
+/*-------------------SPACE AT BOTTOM OF COMPOSITE CHART (START)---------------------*/
+    
+.compChart {
+    margin-bottom: 50px;
+}
+
+/*-------------------SPACE AT BOTTOM OF COMPOSITE CHART (END)---------------------*/
+
+
+
+
+
+
+
+/*<!-----------------------------HOUSE SIGILS, NAMES AND KINGDOM (START)-------------------------->   */
+
+
+.house1 {
+    border-radius: 100%;
+}
+
+.house2 {
+    border-radius: 100%;
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'Lora' sans-serif;
+}
+
+.title { 
+    transition: all .4s ease-in-out; 
+}
+
+.title:hover {
+    transform: scale(1.1);
+}
+
+
+/*<!-----------------------------HOUSE SIGILS, NAMES AND KINGDOM (END)-------------------------->*/
+
+
+
+
+
+/*<!-----------------------------PAGE DIVIDERS (START)-------------------------->*/
+
+.hr {
+    margin-bottom: 65px;
+    width: 100%;
+    height: 1px;
+    background-color: #f55205;
+    opacity: 0.3;
+}
+
+/*<!-----------------------------PAGE DIVIDERS (START)-------------------------->*/
