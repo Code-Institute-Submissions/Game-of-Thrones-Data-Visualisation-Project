@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
     
     <script type="text/javascript" src="static/js/d3.min.js"></script>
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
@@ -18,17 +19,168 @@
 </head>
 <body>
     
-    <h1>Game of Thrones Data Visualisation</h1>
+<!-----------------------------NAVBAR (START)-------------------------->
     
-    <div id="kingdom-selector"></div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="index.html">Game of Thrones Data Visualisation</a>
+        </nav>
+    </div>    
+     
+<!-----------------------------NAVBAR (END)-------------------------->     
+     
+        
+        
+        
+        
+<!-----------------------------HOUSE NAMES, SIGILS AND KINGDOMS (START)-------------------------->
+
+    <div class="container">
+
+        <div class="row">
+           <div class="title col-xs-6 col-sm-4 col-md-2 offset-1 col-lg-2.5">
+               <img class="house1" src="static/css/images/imagesForGOTinteractiveProject/arryn1.jpg" alt="House Arryn Sigil"></img>
+               <h6>House Arryn</h6>
+               <h5>(The Vale)</h5>
+           </div>
+       
+           <div class="title col-xs-6 col-sm-4 col-md-2 col-lg-2.5">
+               <img class="house1" src="static/css/images/imagesForGOTinteractiveProject/stark1.jpg" alt="House Stark Sigil"></img>
+               <h6>House Stark</h6>
+               <h5>(The North)</h5>
+           </div>
+           
+           <div class="title col-xs-6 col-sm-4 col-md-2 col-lg-2.5">
+               <img class="house1" src="static/css/images/imagesForGOTinteractiveProject/baratheon1.jpg" alt="House Barartheon Sigil"></img>
+               <h6>House Baratheon</h6>
+               <h5>(Stormlands)</h5>
+           </div>
+           
+           <div class="title col-xs-6 col-sm-4 col-md-2 col-lg-2.5">
+               <img class="house1" src="static/css/images/imagesForGOTinteractiveProject/greyjoy1.jpg" alt="House Greyjoy Sigil"></img>
+               <h6>House Greyjoy</h6>
+               <h5>(Iron Islands)</h5>
+           </div>
+           
+           <div class="title col-xs-6 col-sm-4 col-md-2 col-lg-2.5">
+               <img class="house1" src="static/css/images/imagesForGOTinteractiveProject/lannister2.jpg" alt="House Lannister Sigil"></img>
+               <h6>House Lannister</h6>
+               <h5>(Westerlands)</h5>
+           </div>
+        </div>   
+          
+        <div class="row">   
+           <div class="title col-xs-6 col-sm-4 col-md-3 col-lg-3">
+               <img class="house2" src="static/css/images/imagesForGOTinteractiveProject/martell1.jpg" alt="House Martell Sigil"></img>
+               <h6>House Martell</h6>
+               <h5>(Dorne)</h5>
+           </div>
+           
+           <div class="title col-xs-6 col-sm-4 col-md-3 col-lg-3">
+               <img class="house2" src="static/css/images/imagesForGOTinteractiveProject/targaryen1.jpg" alt="House Targaryen Sigil"></img>
+               <h6>House Targaryen</h6>
+               <h5>(Crownlands)</h5>
+           </div>
+           
+           <div class="title col-xs-6 col-sm-4 col-md-3 col-lg-3">
+               <img class="house2" src="static/css/images/imagesForGOTinteractiveProject/tully2.jpg" alt="House Tully Sigil"></img>
+               <h6>House Tully</h6>
+               <h5>(Riverlands)</h5>
+           </div>
+           
+           <div class="title col-xs-6 col-sm-4 col-md-3 col-lg-3">
+               <img class="house2" src="static/css/images/imagesForGOTinteractiveProject/tyrell1.jpg" alt="House Tyrell Sigil"></img>
+               <h6>House Tyrell</h6>
+               <h5>(The Reach)</h5>
+           </div>
+       </div>
+        
+<!-----------------------------HOUSE NAMES, SIGILS AND KINGDOMS (END)-------------------------->
+        
+        
+        
+            <hr class="hr">
+        
+        
+
+<!-----------------------------KINGDOM SELECTOR (START)-------------------------->
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="selectKingdomSubtitle">Select Kingdom</h4>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6" id="kingdom-selector"></div>
+        </div>    
+        
+<!-----------------------------KINGDOM SELECTOR (FINISH)-------------------------->        
+        
+        
+        
     
-    <div id="percent-of-land-owned"></div>
+        
+        
+
+<!-----------------------------PIE AND BAR CHART/LAND AND POPULATION (START)-------------------------->        
+        
+        <div class="row">
+            <div class="text1 col-md-6">The North, The Reach and Dorne occupy the largest percent of land in Westeros.</div>
+            <div class="text2 col-md-6">The Reach is the most populated Kingdom in Westeros. The North and Dorne are largely vacant in 
+            comparison despite their size due to vast uninhabitable land.</div>
+        </div>
+        
+        <div class="row">
+            <div class="col-6" id="percent-of-land-owned"></div>
+            <div class="col-6" id="population-of-each-kingdom"></div>
+        </div>    
+        
+<!-----------------------------PIE AND BAR CHART/LAND AND POPULATION (END)-------------------------->        
+        
+        
+        
+        
+        <hr class="hr">
+        
+        
+        
+        
+<!-----------------------------STACKED CHART/ARMY AND SOLDIER (START)-------------------------->        
+        
+        
+        <div class="text3 col-md-6 offset-md-2">The Reach has the largest army with at least thirty thousand more soldiers than any
+        other Kingdom.</div>
+        
+        <div class="row">
+            <div class="col-md-6 offset-md-2" id="size-of-army"></div>
+        </div>
+        
+<!-----------------------------STACKED CHART/ARMY AND SOLDIER (END)-------------------------->        
+        
+        
+        
+        
+        <hr class="hr">
+        
+        
+        
+        
+<!-----------------------------COMPOSITE CHART/VIEWINGS (START)-------------------------->        
+        
+        <div class="row">
+            <div class="text4 col-ld-9">Each season's audience grew larger with a particular spike in views on the last
+            episode. Season 7 viewings grew comparitively larger with season 4,5 and 6 showing similar viewing numbers.</div>
+        </div>
+        
+        <div class="row">
+            <div class="compChart col-lg-9" id="views-per-episode-per-season"></div>
+        </div>
+    </div>
     
-    <div id="population-of-each-kingdom"></div>
+<!-----------------------------COMPOSITE CHART/VIEWINGS (END)-------------------------->        
     
-    <div id="size-of-army"></div>
     
-    <div id="views-per-episode-per-season"></div>
     
     
 </body>

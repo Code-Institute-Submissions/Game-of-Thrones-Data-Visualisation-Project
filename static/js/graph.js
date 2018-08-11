@@ -14,21 +14,18 @@ function makeGraphs(error, kingdomData){
         d.population = parseInt(d.population);
     })
     
-    kingdomData.forEach(function(d){
-        d.ep = parseInt(d.ep);
-    })
-
-    
         
     show_kingdom_selector(ndx);
     show_land_data(ndx);
     show_population_data(ndx);
     show_army_size(ndx);
-    views_in_millions(ndx);
+    
     
     dc.renderAll();
 }
 
+
+/*---------------------KINGDOM SELECTOR (START)---------------------*/
 
 function show_kingdom_selector(ndx) {
     dim = ndx.dimension(dc.pluck('kingdom'));
@@ -38,6 +35,15 @@ function show_kingdom_selector(ndx) {
         .dimension(dim)
         .group(group);
 }
+
+/*---------------------KINGDOM SELECTOR (START)---------------------*/
+
+
+
+
+
+
+/*--------------------PIE CHART/PERCENT OF LAND OWNED (START)---------------------*/
 
 function show_land_data(ndx) {
     var kingDim = ndx.dimension(dc.pluck('kingdom'));
@@ -75,13 +81,26 @@ function show_land_data(ndx) {
     dc.pieChart("#percent-of-land-owned")
         .height(350)
         .radius(300)
+        .innerRadius(10)
+        .width(550)
+        .height(350)
         .dimension(kingDim)
         .group(land_group)
         .valueAccessor(function(d){
             return d.value.average.toFixed(0);
         })
-        .transitionDuration(1000);
+        .transitionDuration(2000)
+        .legend(dc.legend().x(0).y(80).itemHeight(15).gap(3));
 }
+
+/*--------------------PIE CHART/PERCENT OF LAND OWNED (END)---------------------*/
+
+
+
+
+
+
+/*--------------------BAR CHART/POPULATION OF EACH KINGDOM (START)---------------------*/
 
 function show_population_data(ndx) {
     var kingDim = ndx.dimension(dc.pluck('kingdom'));
@@ -113,11 +132,12 @@ function show_population_data(ndx) {
             average: 0,
         };
     }
-    
+
+
     dc.barChart("#population-of-each-kingdom")
-        .width(600)
-        .height(400)
-        .margins({top: 20, right: 10, bottom: 50, left: 40})
+        .width(630)
+        .height(420)
+        .margins({top: 20, right: 30, bottom: 50, left: 40})
         .dimension(kingDim)
         .group(populationInMillions)
         .valueAccessor(function(d) {
@@ -131,6 +151,13 @@ function show_population_data(ndx) {
         .elasticY(true)
         .yAxis().ticks(12);
 } 
+
+/*--------------------BAR CHART/POPULATION OF EACH KINGDOM (END)---------------------*/
+
+
+
+
+/*--------------------STACKED CHART/ARMY SIZE, SOLDIERS (START)---------------------*/
 
 function show_army_size(ndx) {
         var dim = ndx.dimension(dc.pluck('kingdom'));
@@ -206,8 +233,8 @@ function show_army_size(ndx) {
             });
         var stackedChart = dc.barChart("#size-of-army");
         stackedChart
-            .width(600)
-            .height(400)
+            .width(660)
+            .height(430)
             .dimension(dim)
             .group(quantityByNameInfantry, "Infantry")
             .stack(quantityByNameCalvalry, "Calvalry")
@@ -223,11 +250,36 @@ function show_army_size(ndx) {
             .yAxisLabel("Soldier Quantity and Type in Thousands")
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Kingdom")
-            .legend(dc.legend().x(520).y(0).itemHeight(15).gap(3));
+            .legend(dc.legend().x(540).y(0).itemHeight(15).gap(3));
         stackedChart.margins({top: 20, right: 10, bottom: 50, left: 80});
         
 }
     
+/*--------------------STACKED CHART/ARMY SIZE, SOLDIERS (END)---------------------*/
+    
+    
+    
+    
+    
+    
+    
+/*--------------------COMPOSITE CHART/VIEWS PER EPISODE, PER SEASON (START)---------------------*/
+    
+queue()
+    .defer(d3.csv, "data/gameOfThronesData.csv")
+    .await(makeCompChart);
+        
+function makeCompChart(error, kingdomData){
+    var ndx = crossfilter(kingdomData);    
+
+     kingdomData.forEach(function(d){
+        d.ep = parseInt(d.ep);
+    });
+    
+    views_in_millions(ndx);
+    
+     dc.renderAll();
+}
     
 function views_in_millions(ndx) {
     var episode_dim = ndx.dimension(dc.pluck('ep'));
@@ -295,13 +347,13 @@ function views_in_millions(ndx) {
   
     var compositeChart = dc.compositeChart("#views-per-episode-per-season");
     compositeChart
-        .width(1000)
-        .height(200)
+        .width(1150)
+        .height(380)
         .dimension(episode_dim)
         .x(d3.time.scale().domain([firstEpisode, lastEpisode]))
         .yAxisLabel("Views in Millions")
         .xAxisLabel("Episode")
-        .legend(dc.legend().x(960).y(20).itemHeight(13).gap(5))
+        .legend(dc.legend().x(1100).y(20).itemHeight(13).gap(5))
         .renderHorizontalGridLines(true)
         .compose([
             dc.lineChart(compositeChart)
@@ -329,7 +381,7 @@ function views_in_millions(ndx) {
         .brushOn(false);
 }    
     
-    
+/*--------------------COMPOSITE CHART/VIEWS PER EPISODE, PER SEASON (END)---------------------*/    
 
     
 
