@@ -90,7 +90,7 @@ function show_land_data(ndx) {
             return d.value.average.toFixed(0);
         })
         .transitionDuration(2000)
-        .legend(dc.legend().x(0).y(80).itemHeight(15).gap(3));
+        // .legend(dc.legend().x(0).y(80).itemHeight(15).gap(3));
 }
 
 /*--------------------PIE CHART/PERCENT OF LAND OWNED (END)---------------------*/
@@ -270,12 +270,9 @@ queue()
     .await(makeCompChart);
         
 function makeCompChart(error, kingdomData){
-    var ndx = crossfilter(kingdomData);    
-
-     kingdomData.forEach(function(d){
-        d.ep = parseInt(d.ep);
-    });
+    var ndx = crossfilter(kingdomData);   
     
+
     views_in_millions(ndx);
     
      dc.renderAll();
