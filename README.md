@@ -23,7 +23,7 @@ The target audience for this project is aimed at fans of Game of Thrones as it p
 'As a Game of Thrones fan it would be good to know which main house belongs to which region so I can see which has the biggest army, largest population and how much land they own' - the nine sigils at the top of the page and the text underneath help to categorise the houses into the regions
 
 
-* All mockups/planning/diagrams can be found as JPG files in this file path /static/css/images/mock ups *
+* All mockups/planning/diagrams can be found as JPG files in this file path /static/css/images/mock ups 
 
 ## Technologies
 
