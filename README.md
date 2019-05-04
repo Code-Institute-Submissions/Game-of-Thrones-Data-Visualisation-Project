@@ -1,12 +1,12 @@
-#Game of Thrones Data Visualisation
+# Game of Thrones Data Visualisation
 
 This is my second project under Code Institute based on data visualisation. I have based the theme of the data on a T.V series called A Game of Thrones. The site displays some info in regards to 'regions' of the show through data using html, css and javascript.
 
 
  
-##UX
+## UX
  
-###User Stories
+### User Stories
 
 The target audience for this project is aimed at fans of Game of Thrones as it provides them with background infomation for each region within the 'Seven Kingdoms', visually, all on one page. The TV show does not provide much of this info, certainly not as in depth, so is a good resource for fans who are curious and eager to know. This site helps them find this infomation through visual data presentations via graphs for each piece of background info.
 
@@ -25,7 +25,7 @@ The target audience for this project is aimed at fans of Game of Thrones as it p
 
 * All mockups/planning/diagrams can be found as JPG files in this file path /static/css/images/mock ups *
 
-##Technologies
+## Technologies
 
 1. HTML - is used to provide the base layer for images/layout/text/frameworks. https://www.w3schools.com/html/html_intro.asp
 2. CSS - is used for styling the page. http://www.css3.info/
@@ -33,17 +33,17 @@ The target audience for this project is aimed at fans of Game of Thrones as it p
 4. JavaScript - is used for creating the charts. https://www.javascript.com/
 5. dc.js - is a library from JavaScript to display charts that are data driven and reactive and provide instant feedback to user interaction. https://dc-js.github.io/dc.js/
 
-##Features
+## Features
 
-###Existing Features
+### Existing Features
 - Feature 1 - The dimensional charting javascript library comes with crossfilter support allowing highly efficient exploration of visual data and user interaction on the site. (Can be found within the script tags in the head of the index.html page)
 
-###Features Left to Implement
+### Features Left to Implement
 
 In the future I would like to add data for the final season of the show once it has finished (Season 8) as well as an update to the data as army sizes/soldiers will have changed. I would also like to add pages for each region that provides some infomation about them.
 
 
-##Testing
+## Testing
 
 'As a new person to the world of Game of Thrones I would like to know a bit more infomation as to what makes up the land the characters come from' - this is achieved by simply breaking up the data into categories/kingdoms are listing the specific data within that category in the csv file and connecting it to the app to display.
 
@@ -62,19 +62,19 @@ The crossfilter allows the charts to behave intuitively and in sync to display d
 The chart containers are responsive on different screen sizes. The stacked and composite charts take the full width of the page due to their sizes as is more easy to digest the info and sits nicely on the page. The pie chart and bar chart will take up the full width of the page on medium and small screens. The images on the page will also 'stack' as the page reduces in size and each image with the associated text will display one on top of the other.
 
 
-##Deployment
+## Deployment
 
 This project is hosted on GitHub pages and is deployed from the master branch. With each change committed the site will be updated and new the new changes will be displayed.
 
 
-##Credits
+## Credits
 
-###Content
+### Content
 The data for quantity of views in millions was taken from Wikipedia: https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_episodes
 
-###Media
+### Media
 - The photos used in this site were obtained from Google images
 
-###Acknowledgements
+### Acknowledgements
 
 - I received inspiration for this project from HBO's television series A Game of Thrones
